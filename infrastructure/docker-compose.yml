@@ -1,0 +1,16 @@
+version: '3.6'
+
+volumes:
+  data-volume: {}
+
+services:
+  gemfire:
+    container_name: gemfire
+    build:
+      context: gemfire
+      #dockerfile: Dockerfile
+    ports:
+    - "40404:40404"
+    - "10334:10334"
+    - "1099:1099"
+    - "7070:7070"

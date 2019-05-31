@@ -1,0 +1,5 @@
+start locator --name=locator1 --jmx-manager-hostname-for-clients=localhost
+configure pdx --disk-store=DEFAULT --read-serialized=true
+start server --name=server1
+connect --locator=localhost[10334]
+create region --name=Client --type=PARTITION_REDUNDANT_PERSISTENT --redundant-copies=1 --disk-store=DEFAULT --skip-if-exists
